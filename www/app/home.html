@@ -1,0 +1,236 @@
+<div layout="row" ng-cloak layout-fill>
+
+ <md-content layout-padding style="width: 100%;">
+
+   <p class="inset">Create New User</p>
+   <div layout="row">
+  		<div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>User Name</label>
+	          <input required name="name" ng-model="homeCtrl.newuser.name">
+	        </md-input-container>
+        </div>
+        <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>User Email</label>
+	          <input required type="email" name="email" ng-model="homeCtrl.newuser.email"
+	               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+	        </md-input-container>
+        </div>
+        <div flex="20">
+       		 <md-button class="md-raised md-primary" ng-click="homeCtrl.createUser()">Create</md-button>
+        </div>
+    </div>
+   <md-divider ></md-divider>
+
+   	<!--  Section 1 -->
+    <p class="inset">1. API to create a friend connection between two email addresses.</p>
+    <div layout="row">
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select first user</label>
+	          <md-select ng-model="homeCtrl.user1">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div>  
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select second user</label>
+	          <md-select ng-model="homeCtrl.user2">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div> 
+	    <div flex="20">
+       		 <md-button class="md-raised md-primary" ng-click="homeCtrl.addFriend()">Add Friend</md-button>
+        </div>  
+      </div>  
+      <md-divider ></md-divider>
+
+    <!--  Section 2 -->
+    <p class="inset">2. API to retrieve the friends list for an email address.</p>
+    <div layout="row">
+	    <div flex="80">
+	        <md-input-container style="width: 90%;">
+	          <label>Select user to retrieve his/her friend list</label>
+	          <md-select ng-model="homeCtrl.retrieveUser">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div>  
+	    <div flex="20">
+       		 <md-button class="md-raised md-primary" ng-click="homeCtrl.retrieveFriend()">Friend List</md-button>
+        </div>  
+      </div>  
+
+      <div layout="row">
+      	<div flex="100">
+      <p ng-if="homeCtrl.friendCount != 0 ">Total Friend {{homeCtrl.friendCount}}</p>
+      </div>
+      <div flex="100">
+      <md-list-item class="md-2-line" ng-repeat="phone in homeCtrl.friendList">
+          <div class="md-list-item-text">
+            <p> {{ phone }} </p>
+          </div>
+       </md-list-item> 
+      </div> 
+      </div>
+      <md-divider ></md-divider>
+
+
+    <!--  Section 3 -->
+    <p class="inset">3. API to retrieve the common friends list between two email addresses.</p>
+    <div layout="row">
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select first user</label>
+	          <md-select ng-model="homeCtrl.commonUser1">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container style="width: 90%;">
+	    </div>  
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select second user</label>
+	          <md-select ng-model="homeCtrl.commonUser2">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div> 
+	    <div flex="20">
+       		 <md-button class="md-raised md-primary" ng-click="homeCtrl.commonFriend()">Mutual Friend</md-button>
+        </div>  
+      </div>  
+
+       <div layout="row">
+      	<div flex="100">
+      <p ng-if="homeCtrl.commonCount != 0 ">Total Friend {{homeCtrl.commonCount}}</p>
+      </div>
+      <div flex="100">
+      <md-list-item class="md-2-line" ng-repeat="phone1 in homeCtrl.commonList">
+          <div class="md-list-item-text">
+            <p> {{ phone1 }} </p>
+          </div>
+       </md-list-item> 
+      </div> 
+      </div>
+      <md-divider ></md-divider>
+
+
+     <!--  Section 4 -->
+    <p class="inset">4. API to subscribe to updates from an email address</p>
+    <div layout="row">
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select requestor user</label>
+	          <md-select ng-model="homeCtrl.subscribeuser1">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div>  
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select target user</label>
+	          <md-select ng-model="homeCtrl.subscribeuser2">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div> 
+	    <div flex="20">
+       		 <md-button class="md-raised md-primary" ng-click="homeCtrl.subscribeUser()">Subscribe</md-button>
+        </div>  
+      </div>  
+      <md-divider ></md-divider>
+
+
+    <!--  Section 5 -->
+    <p class="inset">5. API to block updates from an email address.</p>
+    <div layout="row">
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select requestor user</label>
+	          <md-select ng-model="homeCtrl.blockuser1">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div>  
+	    <div flex="40">
+	        <md-input-container style="width: 90%;">
+	          <label>Select target user</label>
+	          <md-select ng-model="homeCtrl.blockuser2">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div> 
+	    <div flex="20">
+       		 <md-button class="md-raised md-primary" ng-click="homeCtrl.blockUser()">Block</md-button>
+        </div>  
+      </div>  
+      <md-divider ></md-divider>
+
+
+    <!--  Section 6 -->
+    <p class="inset">6. API to retrieve all email addresses that can receive updates from an email address.</p>
+    <div layout="row">
+	    <div flex="80">
+	        <md-input-container>
+	          <label>Select sender user</label>
+	          <md-select ng-model="homeCtrl.feeduser">
+	            <md-option ng-repeat="user in homeCtrl.userList" ng-value="user.email">
+	              {{user.email}}
+	            </md-option>
+	          </md-select>
+	        </md-input-container>
+	    </div> 
+	    <div flex="20">
+       		 <md-button class="md-raised md-primary" ng-click="homeCtrl.feed()">Retrieve</md-button>
+        </div> 
+    </div>
+    <div layout="row">     
+	    <div flex="100">
+             <md-input-container class="md-block">
+	          <label>Enter Feed</label>
+	          <textarea ng-model="homeCtrl.feedtext" md-maxlength="150" rows="2" md-select-on-focus></textarea>
+	        </md-input-container>
+	    </div> 
+    </div>  
+
+     <div layout="row">
+      	<div flex="100">
+      <p ng-if="homeCtrl.feedCount != 0 ">Total Friend {{homeCtrl.feedCount}}</p>
+      </div>
+      <div flex="100">
+      <md-list-item class="md-2-line" ng-repeat="feed in homeCtrl.feedList[0]">
+          <div class="md-list-item-text">
+            <p> {{ feed }} </p>
+          </div>
+       </md-list-item> 
+      </div> 
+      </div>
+    <md-divider ></md-divider>
+
+
+      
+
+ </md-content>
+
+</div>

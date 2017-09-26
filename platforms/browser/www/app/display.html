@@ -1,0 +1,83 @@
+<div layout="column" id="popupContainer" ng-cloak style="height: inherit" class="relative" layout-fill role="main" cg-busy="isLoading">
+  <md-toolbar  style="background-color: #18a9b5">
+      <div class="md-toolbar-tools">
+      <md-button aria-label="home" ui-sref="home">
+          <ng-md-icon icon="home" size="34"></ng-md-icon>
+      </md-button>
+      <span style="width: 100%;text-align: center">      
+          <h2>
+              Document Management System
+          </h2>
+      </span>
+      <span flex></span>
+      <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+        <ng-md-icon icon="iso" size="34"></ng-md-icon>
+      </md-button>
+      <ui-mobile-back-button></ui-mobile-back-button>
+      </div>
+  </md-toolbar>
+
+  <md-toolbar class="md-hue-1" style="background-color: #ffffff" ng-hide="showSearch">
+    <div class="md-toolbar-tools">
+        <md-input-container  flex>
+          <label>&nbsp;</label>
+          <input ng-model="searchText" placeholder="filter...">
+        </md-input-container>
+        <md-button  ng-click="searchText = ''" aria-label="clear">
+          <ng-md-icon icon="backspace" style="fill:#18a9b5"></ng-md-icon>
+        </md-button>
+
+        <md-menu>
+        <md-button  class="md-icon-button" aria-label="menu" ng-click="displayCtrl.openMenu($mdOpenMenu, $event)">
+           <ng-md-icon icon="filter" style="fill:#18a9b5"></ng-md-icon>
+        </md-button>
+        <md-menu-content width="3">
+          <md-menu-item>
+            <md-button ng-click="displayCtrl.toggleFolder()">
+              <ng-md-icon icon="{{displayCtrl.folderEnabled ? 'folder' : 'folder_open'}}" 
+              class="{{displayCtrl.folderEnabled ? 'filter-sel' : 'filter-non-sel'}}"></ng-md-icon>
+              <span class="{{displayCtrl.folderEnabled ? 'filter-txt-sel' : 'filter-txt-non-sel'}}"> 
+              {{displayCtrl.folderEnabled ? 'Hide ' : 'Show '}}File</span>
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-click="displayCtrl.toggleDocument()">
+              <ng-md-icon icon="{{displayCtrl.documentEnabled ? 'image' : 'crop_original'}}" 
+              class="{{displayCtrl.documentEnabled ? 'filter-sel' : 'filter-non-sel'}}"></ng-md-icon>
+              <span class="{{displayCtrl.documentEnabled ? 'filter-txt-sel' : 'filter-txt-non-sel'}}">
+              {{displayCtrl.documentEnabled ? 'Hide ' : 'Show '}}Record</span>
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-click="displayCtrl.sortDocument()">
+              <ng-md-icon icon="sort" class="{{displayCtrl.sortEnabled ? 'filter-sel' : 'filter-non-sel'}}">
+              </ng-md-icon>
+              <span class="{{displayCtrl.sortEnabled ? 'filter-txt-sel' : 'filter-txt-non-sel'}}">
+              Sort By Created Date</span>
+            </md-button>
+          </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+    </div>
+    <div style="color:#bebebe;font-size: small;padding-right: 15px;padding-left: 15px;">Top 100 search result : 
+    {{displayCtrl.textSearch}} (About {{displayCtrl.displayList.length}} results)
+    </div>
+  </md-toolbar>
+
+  <md-content layout-padding flex md-scroll-y style=" background-color: #f1f1f1;">
+        <!-- <div class="inset"></div> -->
+        <div role="tabpanel" flex layout-align="center center" ng-show='displayCtrl.displayList != undefined'>
+        <div ng-repeat="item in displayCtrl.displayList | filter:searchText | orderBy:displayCtrl.sortKey:reverse">
+                <doc-add-card card-info="{{item}}">        
+                </doc-add-card>
+        </div>
+        </div>
+        <div role="tabpanel" flex layout-align="center center" ng-show='displayCtrl.displayList == undefined || displayCtrl.displayList.length == 0'>
+         No Record Found
+        </div>
+  </md-content>
+</div>
+
+

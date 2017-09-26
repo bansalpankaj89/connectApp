@@ -1,0 +1,50 @@
+<div layout="column"  style="height: inherit;background-color: #f1f1f1;"  ng-cloak cg-busy="isLoading">
+
+    <div layout="row" flex="20"> 
+       <md-content layout="column" flex="100" class="md-padding" style="background-color: #f1f1f1;">
+            <div layout="row" >
+             <div layout="column" flex="15">
+              </div>
+              <div layout="column" layout-fill layout-align="center center">   
+                  <hgroup>
+                   <img ng-src="img/jtc_logo_search.png" class="jtc-logo">
+                   <h3>Document Management System</h3>
+                  </hgroup>
+              </div>  
+              <div layout="column" flex="15" layout-align="start end">
+                  <span class="toggle-Btn">Advance Search</span>
+                  <md-switch  ng-model="searchCtrl.advancemode" aria-label="Switch 1" ng-change="onChange(searchCtrl.advancemode)">
+                  </md-switch>
+              </div>  
+            </div>
+       </md-content>         
+    </div>
+    <div layout="row" flex="80">
+      <md-content layout="column" layout-fill flex="100" layout-align="end center"  class="md-padding" style="background-color: #f1f1f1;">
+        <form name="searchForm">
+          <div layout="row" layout-align="center center">
+             <md-whiteframe class="md-whiteframe-z3 search">        
+                <md-content>
+                  <md-input-container  class="md-no-float md-block input-search">
+                    <label></label>
+                    <input type="text" ng-model="searchCtrl.search" placeholder="Type something here..">
+                  </md-input-container>
+                </md-content>
+             </md-whiteframe>
+          </div>
+
+          <div layout="row" layout-align="center center">
+            <div layout="column" class="md-toolbar-tools-bottom inset">
+                <md-button class="md-fab search-btn" aria-label="search"  ng-disabled = "searchCtrl.search == ''"
+                ng-click="searchDisply(searchCtrl.search)" >
+                  <ng-md-icon icon="search"  size="28"></ng-md-icon> 
+                </md-button>
+           </div>
+          </div>
+        </form>          
+      </md-content>
+  </div>
+
+</div>
+
+

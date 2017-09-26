@@ -1,0 +1,83 @@
+<md-card flex-gt-sm="90" ng-if="item.content.properties.r_object_id.indexOf('09') == 0 || 
+item.content.properties.r_object_id.indexOf('documents/09') != -1" ng-show="displayCtrl.showDocument">
+	<md-card-content  style="padding: 5px;">
+		<div class="md-tile-content add-card">
+		    <div layout="row">
+		    	  <doc-add-image image-info="item.content.properties.a_content_type"></doc-add-image>
+			      <div flex class="card-title demo-swipe" md-swipe-left="onSwipeLeft()" md-swipe-right="onSwipeLeft()" 
+			      ng-click="cardCtrl.openFile(item.content.properties.r_object_id,item.content.properties.r_full_content_size)">
+				      {{item.content.properties.title | limitTo:33}}
+				      <span ng-if="item.content.properties.title.length == 0">
+				      {{item.content.properties.object_name | limitTo:33 }}
+				      </span>
+			      </div>
+				    <md-button class="md-fab  md-mini" aria-label="download" style="background-color:#D0D0D0;opacity: 0.5;"
+				       ng-show="item.content.properties.r_full_content_size <= 50000000 && 
+				       item.content.properties.r_full_content_size > 2000000">
+					      <md-tooltip md-direction="top">                      
+				          Viewable
+				          </md-tooltip>
+					      <ng-md-icon icon="file_download"></ng-md-icon> 
+				      </md-button>
+				      <md-button class="md-fab  md-mini" aria-label="fast"  style="background-color:#D0D0D0;opacity: 0.5;"
+				      ng-show="item.content.properties.r_full_content_size <= 2000000">
+					      <md-tooltip md-direction="top">
+				          Fast View
+				          </md-tooltip>
+					      <ng-md-icon icon="flash_on"></ng-md-icon> 
+				      </md-button>
+				      <md-button class="md-fab  md-mini" aria-label="restricted"  style="background-color:#D0D0D0;opacity: 0.5;"
+				      ng-show="item.content.properties.r_full_content_size > 50000000">
+					      <md-tooltip md-direction="top">
+				          View Restricted
+				          </md-tooltip>
+					      <ng-md-icon icon="block"></ng-md-icon> 
+				      </md-button>
+			      <md-button aria-label="Open properties"  layout-align="end end" 
+			        ng-click="cardCtrl.showListBottomSheet(item.links[0].href)">
+			        <ng-md-icon icon="more_vert"></ng-md-icon>
+			      </md-button>    
+		    </div>   
+		    <div ng-show="!showSummary" 
+		     ng-click="cardCtrl.openFile(item.content.properties.r_object_id,item.content.properties.r_full_content_size)" 
+		     class="{{showSummary ? 'non-swipe-card' : 'swipe-card'}}">
+		     <div layout="row"
+		    ng-click="cardCtrl.openFile(item.content.properties.r_object_id,item.content.properties.r_full_content_size)">
+		          <h4 flex="50"><ng-md-icon icon="access_time" style="fill:#18a9b5"></ng-md-icon>  :  {{item.content.properties.r_creation_date | date:'dd MMM yyyy'}} </h4>
+		          <h4 flex="50"><ng-md-icon icon="person" style="fill:#18a9b5"></ng-md-icon>  :  {{item.content.properties.r_creator_name}} 
+		          </h4> 
+		    </div> 
+		      	  <p>{{item.summary}}</p>
+		    </div>
+		</div>
+	</md-card-content>
+</md-card>
+
+<md-card flex-gt-sm="90" ng-if="item.content.properties.r_object_id.indexOf('0b') == 0"  ng-show="displayCtrl.showFolder">
+	<md-card-content style="padding: 5px;">
+		<div class="md-tile-content add-card">
+		    <div layout="row">
+		          <i class="fa fa-folder-open-o" style="font-size: 2rem; padding: 12px;color: #0e656c"></i>
+				   <div flex class="card-title demo-swipe" md-swipe-left="onSwipeLeft()" md-swipe-right="onSwipeLeft()" ng-click="displayCtrl.openFolder(item.content.properties.r_object_id)">
+			         {{item.content.properties.title | limitTo:33}}
+				      <span ng-if="item.content.properties.title.length == 0">
+				      {{item.content.properties.object_name | limitTo:33 }}
+				     </span>
+			      </div>  
+			      <md-button aria-label="Open properties"  layout-align="end end" 
+			        ng-click="cardCtrl.showListBottomSheet(item.links[0].href)">
+			        <ng-md-icon icon="more_vert"></ng-md-icon>
+			      </md-button>    
+		    </div>  
+		     <div ng-show="!showSummary" 
+		     ng-click="displayCtrl.openFolder(item.content.properties.r_object_id)" 
+		     class="{{showSummary ? 'non-swipe-card' : 'swipe-card'}}">
+		     <div layout="row" ng-click="displayCtrl.openFolder(item.content.properties.r_object_id)">
+		          <h4 flex="50"><ng-md-icon icon="access_time" style="fill:#18a9b5"></ng-md-icon>  :  {{item.content.properties.r_creation_date | date:'dd MMM yyyy'}} </h4>
+		          <h4 flex="50"><ng-md-icon icon="person" style="fill:#18a9b5"></ng-md-icon>  :  {{item.content.properties.r_creator_name}} 
+		          </h4> 
+		    </div> 
+		    </div> 
+		</div>
+	</md-card-content>
+</md-card>

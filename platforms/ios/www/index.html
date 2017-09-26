@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js en_en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+     <title>DMC</title>
+
+      <link rel="stylesheet" href="css/fonts.css"/>
+      <link rel="stylesheet" href="css/font-awesome.min.css"/>
+      <link rel="stylesheet" href="css/angular-busy.css">
+      <link rel="stylesheet" href="css/angular-material.min.css"/>
+      <link rel="stylesheet" href="css/angular-material-icons.css"/>
+      <link href="css/style.css" rel="stylesheet" />
+
+      <script type="text/javascript" src="lib/jquery-2.2.0.min.js"></script>
+      <script src="lib/angular.min.js"></script>
+      <script src="lib/angular-busy.js"></script>
+      <script src="lib/moment.js"></script>
+      <script src="lib/angular-ui-router.min.js"></script>
+      <script src="lib/angular-animate.min.js"></script>
+      <script src="lib/angular-aria.min.js"></script>
+      <script src="lib/angular-material.min.js"></script> 
+      <script src="lib/angular-material-icons.min.js"></script> 
+      <script src="lib/ng-cordova.js"></script>
+      <script src="cordova.js"></script>
+      <script src="app/app.js"></script>
+
+      <!-- CONFIGURATIONS -->
+      <script src="config/config.settings.js"></script>
+
+      <!-- Factories -->
+      <script src="app/services/settingsService.js"></script>
+      <script src="app/services/loginFactory.js"></script>
+      <script src="app/services/displayFactory.js"></script>
+      <script src="app/services/propertiesFactory.js"></script>
+      
+      <!-- CONTROLLERS -->
+      <script src="app/controllers/loginController.js"></script>
+      <script src="app/controllers/searchController.js"></script>
+      <script src="app/controllers/advSearchController.js"></script>
+      <script src="app/controllers/displayController.js"></script>
+      <script src="common/directive/addCardController.js"></script>  
+      <script src="common/directive/addImageController.js"></script>  
+      <script src="app/controllers/propertiesController.js"></script>  
+      <script src="app/controllers/displayFolderController.js"></script> 
+  </head>
+
+    <body layout="column" ng-app="myApp">
+        <ui-view style="height: inherit;width: inherit"></ui-view>
+    </body>
+
+</html>

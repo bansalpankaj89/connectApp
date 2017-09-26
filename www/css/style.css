@@ -1,0 +1,13 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.md-toast.error {
+    background-color: red;
+}
+
+.md-toast.success {
+    background-color: green;
+}

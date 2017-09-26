@@ -1,0 +1,29 @@
+<div layout="row" ng-cloak layout-align="center center" layout-fill class="ln-page" cg-busy="isLoading">
+  <form name="loginForm" flex="40">	
+	<md-whiteframe class="md-whiteframe-z5" layout="column" flex="40" layout-padding style="background-color: white">
+		<md-content>
+			<hgroup>
+			  <img ng-src="img/jtc_logo.png" class="jtc-logo-login">
+			  <h3>Document Management System</h3>
+			</hgroup>
+			<md-input-container class="md-icon-float md-block">
+				<label>Username</label>
+				<md-icon md-svg-src="img/person.svg" class="username"></md-icon>
+				<input type="text" ng-model="user.username" required>
+			</md-input-container>
+			<md-input-container class="md-icon-float md-block">
+				<label>Password</label>
+				<md-icon md-svg-src="img/lock.svg" class="password"></md-icon>
+				<input type="password" ng-model="user.password" required>
+			</md-input-container>
+			<md-input-container layout-align="center center">
+				<div layout="row" layout-sm="column" layout-margin>
+				<md-button class="md-raised login-btn" flex="50" flex-sm="100"  ng-disabled="loginForm.$invalid"
+					 ng-click="loginCtrl.checkLogin(user)" >Login</md-button>
+				</div>
+			</md-input-container>
+		</md-content>
+	</md-whiteframe>
+  </form>	
+</div>
+

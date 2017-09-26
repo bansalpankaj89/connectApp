@@ -1,0 +1,254 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+.toggle-Btn{
+  color:#c0c0c0;
+  padding-top:20px;
+  padding-right:10px;
+  font-size: small;
+  }
+.adv-toggle-Btn{
+  color:#18a9b5;
+  padding-top:20px;
+  padding-right:10px;
+  font-size: small;
+}
+input::-webkit-input-placeholder { font-size: 12pt; }
+input::-moz-placeholder { font-size: 12pt;}
+input:-ms-input-placeholder { font-size: 12pt;}
+input:-moz-placeholder { font-size: 12pt;}
+
+
+.cg-busy-default-sign {
+    background-color: #FFF !important;
+    border: 0px !important;
+}
+
+.cg-busy-default-spinner {
+    height: 50px !important;
+    width: 50px !important;
+}
+
+
+.input-search{
+font-size:25px;
+padding-top: 5px;
+padding-right: 5px;
+padding-left: 5px;
+padding-bottom: 0px;
+}
+
+.stop-scroll {
+position: fixed;
+overflow: hidden;
+}
+
+.start-scroll
+{
+overflow-y:scroll !important;
+}
+
+.ln-page{
+background: #0e656c
+}
+
+hgroup { 
+  text-align:center;
+  margin-top: 1em;
+}
+
+h3{ 
+  font-weight: 500; 
+  color: #18a9b5; 
+}
+.card-title{ 
+   font-size: 140%;
+   font-weight: 500;
+   color: #0e656c; 
+   padding: 10px;
+}
+
+.jtc-logo{
+    height: 60px;
+    width: 74px;
+}
+
+.jtc-logo-login{
+    height: 64px;
+    width: 64px;
+}
+
+.inputdemoIcons {
+}
+
+.inputdemoIcons .inputIconDemo {
+  min-height: 48px; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.password {
+  color: green; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.username {
+  color: dodgerblue; }
+.inputdemoIcons md-input-container.md-input-invalid > md-icon.password,
+.inputdemoIcons md-input-container.md-input-invalid > md-icon.username {
+  color: red; }
+
+.login-btn {
+  background: #18a9b5;
+  color: white;
+}
+
+.login-btn:hover { background: #0e656c; }
+
+
+.navbar-fixed-top {
+  position: fixed;
+}
+
+$gray: #eee;
+
+.md-content.md-default-theme {
+  background-color: $gray;
+}
+.md-card {
+  background-color: #fff;
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+.md-toolbar {
+  .md-button.md-default-theme {
+    border-radius: 99%; // round toolbar buttons
+  }
+}
+.md-toolbar-tools-bottom {
+  font-size: small;
+  & :last-child {
+    opacity: 0.8;
+  }
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
+
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white; }
+
+
+.toolbardemoScrollShrink .face {
+  width: 48px;
+  margin: 16px;
+  border-radius: 48px;
+  border: 1px solid #ddd; }
+  
+.cabinet{
+  	  width: 32px !important;
+  	  height: 32px !important;
+      padding-top: 15px;
+      padding-right: 25px;
+}
+
+.s36 {
+  width: 36px;
+  height: 36px;
+  color: #18a9b5; }
+
+
+/*search*/
+.search{
+      width: 600px !important;
+      background-color: white;
+}
+
+.search-btn{
+      width: 64px !important;
+      height: 64px !important;
+      background-color: #18a9b5 !important;
+}
+
+.advSearch-opt{
+  padding-top: 15px;
+  padding-left: 15px;
+  margin-bottom:10px;
+  background-color: #ffffff;
+}
+
+
+
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button,
+.tooltipdemoBasicUsage md-toolbar .md-toolbar-tools .md-button:hover {
+  box-shadow: none;
+  border: none;
+  transform: none;
+  -webkit-transform: none; }
+.tooltipdemoBasicUsage .left {
+  top: 70px !important;
+  left: 56px !important; }
+.tooltipdemoBasicUsage .right {
+  top: 70px !important;
+  right: 56px !important; 
+}
+.add-card{
+    padding-left: 10px;
+    padding-right: 10px;}
+
+.docImage{
+    font-size: 2rem; 
+    padding: 12px;
+    color: #A4716E;}
+
+
+
+.swipedemoBasicUsage .demo-swipe {
+  padding: 20px 10px; }
+.swipedemoBasicUsage .no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  .carddemoBasicUsage .card-media {
+  background-color: #999999; }
+
+  .non-swipe-card{padding: 5px;
+  background-color: #ffffff;
+  -webkit-transform: scale(0.0);
+  -webkit-transition: 3s;
+}
+
+  .swipe-card{padding: 5px;
+    background-color:#eeeeee;
+    border:2px solid #d6d6d6;
+    -webkit-transform: scale(1.0);
+    -webkit-transition: 3s;
+  }
+
+.filter-sel{ fill:#18a9b5; }
+.filter-non-sel{ fill:#D6D6D6; }
+
+.filter-txt-sel{ color:#18a9b5; }
+.filter-txt-non-sel{ color:#D6D6D6; }
+
+.fabSpeedDialdemoBasicUsage .text-capitalize {
+  text-transform: capitalize; }
+.fabSpeedDialdemoBasicUsage .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+  background-color: #000 !important; }
+.fabSpeedDialdemoBasicUsage p.note {
+  font-size: 1.2rem; }
+.fabSpeedDialdemoBasicUsage .lock-size {
+  min-width: 300px;
+  min-height: 300px;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto; }
+
+  .prop{
+    fill:#18a9b5;
+    padding-top: 8px;
+  }
+  .propHeading{
+      fill:#18a9b5; 
+  }
+

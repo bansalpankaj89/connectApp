@@ -1,0 +1,221 @@
+<md-bottom-sheet class="md-list md-has-header" ng-cloak>
+  <div ng-switch on="prtCtrl.propertyList.r_object_type">
+
+  <md-list ng-switch-when="jtc_customer_file">
+    <md-subheader><ng-md-icon icon="apps" class="propHeading"></ng-md-icon>Customer File Properties</md-subheader>
+      <md-list-item  class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Reference Number  :  {{prtCtrl.propertyList.jtc_file_ref}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Old File Reference No  :  {{prtCtrl.propertyList.jtc_old_file_ref[0]}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Company Name  :  {{prtCtrl.propertyList.jtc_company_name | limitTo:50}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> UEN Number  :  {{prtCtrl.propertyList.jtc_uen_num}}
+        </span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Allocation Number  :  {{prtCtrl.propertyList.jtc_allocation_num[0]}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Site Address  :  {{prtCtrl.propertyList.jtc_site_addr | limitTo:50}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Mukim Number  :  {{prtCtrl.propertyList.jtc_mukim_num}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Subject  :  {{prtCtrl.propertyList.jtc_subject | limitTo:50}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span  class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> First Encl Date  :  {{prtCtrl.propertyList.jtc_first_encl | date:'dd MMM yyyy'}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">       
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Last Encl Date  :  {{prtCtrl.propertyList.jtc_last_encl | date:'dd MMM yyyy'}}</span>
+      </md-list-item>
+  </md-list>
+
+  <md-list ng-switch-when="jtc_contract_file">
+  <md-subheader><ng-md-icon icon="apps" class="propHeading"></ng-md-icon>Contract File Properties</md-subheader>
+   <md-list-item  class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Reference Number  :  {{prtCtrl.propertyList.jtc_file_ref}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Old File Reference No  :  {{prtCtrl.propertyList.jtc_old_file_ref[0]}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Project Title  :  {{prtCtrl.propertyList.jtc_project_title | limitTo:50}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> UEN Number  :  {{prtCtrl.propertyList.jtc_uen_num}}
+        </span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Contract Number  :  {{prtCtrl.propertyList.jtc_contract_num}}</span>
+      </md-list-item>
+            <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Contractor Name  :  {{prtCtrl.propertyList.jtc_contractor_name | limitTo:50}}</span>
+      </md-list-item>
+            <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Subject  :  {{prtCtrl.propertyList.jtc_subject | limitTo:50}}</span>
+      </md-list-item>
+       <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> First Encl Date  :  {{prtCtrl.propertyList.jtc_first_encl | date:'dd MMM yyyy'}}</span>
+       </md-list-item>
+      <md-list-item class="md-list-item-content"> 
+        <span  class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Last Encl Date  :  {{prtCtrl.propertyList.jtc_last_encl | date:'dd MMM yyyy'}}</span>
+      </md-list-item>
+  </md-list>
+
+  <md-list ng-switch-when="jtc_subject_file">
+  <md-subheader><ng-md-icon icon="apps" class="propHeading"></ng-md-icon>Subject File Properties</md-subheader>
+  <md-list-item  class="md-list-item-content">
+  <span class="md-inline-list-icon-label">
+  <ng-md-icon icon="lens"  size="14" class="prop"></ng-md-icon> File Ref No  :  {{prtCtrl.propertyList.jtc_file_ref}}</span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Old File Ref No  :  {{prtCtrl.propertyList.jtc_old_file_ref[0]}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label" style="overflow-x: hidden;overflow-y: scroll;height: inherit;">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Title  :  {{prtCtrl.propertyList.title | limitTo:250}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Subject  :  {{prtCtrl.propertyList.subject | limitTo:50}}
+      </span>
+  </md-list-item>
+    <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Owner  :  {{prtCtrl.propertyList.owner_name}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> First Enclosure Date  :  {{prtCtrl.propertyList.jtc_first_encl | date:'dd MMM yyyy'}}
+      </span>
+   </md-list-item>
+    <md-list-item class="md-list-item-content">   
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Last Enclosure Date  :  {{prtCtrl.propertyList.jtc_last_encl | date:'dd MMM yyyy'}}
+      </span>
+  </md-list-item>
+  </md-list>
+
+  <md-list ng-switch-when="jtc_staff_file">
+  <md-subheader><ng-md-icon icon="apps" class="propHeading"></ng-md-icon>Staff File Properties</md-subheader>
+      <md-list-item  class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Reference Number  :  {{prtCtrl.propertyList.jtc_file_ref}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Old File Reference No  :  {{prtCtrl.propertyList.jtc_old_file_ref[0]}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label" style="overflow-x: hidden;overflow-y: scroll;height: inherit;">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Title  :  {{prtCtrl.propertyList.title | limitTo:250}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Staff Name  :  {{prtCtrl.propertyList.jtc_staff_name}}</span>
+      </md-list-item>
+            <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> NRIC/FIN Number  :  {{prtCtrl.propertyList.jtc_nric_fin_num}}</span>
+      </md-list-item>
+            <md-list-item class="md-list-item-content">
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> File Subject  :  {{prtCtrl.propertyList.jtc_subject | limitTo:50}}</span>
+      </md-list-item>
+        <md-list-item class="md-list-item-content">
+        <span  class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> First Encl Date  :  {{prtCtrl.propertyList.jtc_first_encl | date:'dd MMM yyyy'}}</span>
+      </md-list-item>
+      <md-list-item class="md-list-item-content">  
+        <span class="md-inline-list-icon-label">
+        <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Last Encl Date  :  {{prtCtrl.propertyList.jtc_last_encl | date:'dd MMM yyyy'}}</span>
+      </md-list-item>
+  </md-list>
+
+<md-list ng-switch-default>
+<md-subheader><ng-md-icon icon="apps" class="propHeading"></ng-md-icon>Record Properties</md-subheader>
+  <md-list-item  class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon>
+      File Reference Number  :  {{prtCtrl.propertyList.jtc_file_ref}}</span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label" style="overflow-x: hidden;overflow-y: scroll;height: inherit;">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Record Title  :  {{prtCtrl.propertyList.title | limitTo:250}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Authors  :  {{prtCtrl.propertyList.jtc_authors[0]}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Author Organization  :  {{prtCtrl.propertyList.jtc_author_org | limitTo:50}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Drawing Number  :  {{prtCtrl.propertyList.jtc_drawing_number}}
+      </span>
+  </md-list-item>
+    <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Record Source  :  {{prtCtrl.propertyList.jtc_record_source}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Record Type  :  {{prtCtrl.propertyList.jtc_record_type}}
+      </span>
+  </md-list-item>
+ <md-list-item class="md-list-item-content">
+      <span class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Record Owner  :  {{prtCtrl.propertyList.owner_name}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span  class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Date of Record  :  {{prtCtrl.propertyList.jtc_record_date | date:'dd MMM yyyy'}}
+      </span>
+  </md-list-item>
+  <md-list-item class="md-list-item-content">
+      <span  class="md-inline-list-icon-label">
+      <ng-md-icon icon="lens" size="14" class="prop"></ng-md-icon> Date of Creation  :  {{prtCtrl.propertyList.r_creation_date | date:'dd MMM yyyy'}}
+      </span>
+  </md-list-item>
+</md-list>
+
+</div>
+
+
+</md-bottom-sheet>

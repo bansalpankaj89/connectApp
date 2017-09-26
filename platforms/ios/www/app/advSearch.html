@@ -1,0 +1,227 @@
+<div layout="column"  style="height: inherit;background-color: #f1f1f1;"  ng-cloak cg-busy="isLoading">
+
+    
+    <div layout="row" flex="20"> 
+       <md-content layout="column" flex="100" class="md-padding" style="background-color: #f1f1f1;">
+            <div layout="row" >
+             <div layout="column" flex="15">
+              </div>
+              <div layout="column" layout-fill layout-align="center center">   
+                  <hgroup>
+                   <img ng-src="img/jtc_logo_search.png" class="jtc-logo">
+                   <h3>Document Management System</h3>
+                  </hgroup>
+              </div>  
+              <div layout="column" flex="15" layout-align="start end">
+                  <span class="adv-toggle-Btn">Advance Search</span>
+                  <md-switch  ng-model="advSearchCtrl.advancemode" aria-label="Switch 1" ng-change="onChange(advSearchCtrl.advancemode)">
+                  </md-switch>
+              </div>  
+            </div>
+       </md-content>         
+    </div>
+
+     <div layout="row" flex="80" style="padding-bottom: 5px;">
+        <md-content  layout-fill  class="md-padding" style="background-color: #f1f1f1;">
+          <div layout="column" layout-fill  class="md-toolbar-tools-bottom inset">
+                <md-whiteframe class="md-whiteframe-5dp advSearch-opt" layout="row">
+                    <div layout="column" flex="30"></div>
+                    <div layout="column" flex="40"> 
+                     <md-input-container>
+                        <md-select ng-model="advSearchCtrl.selectedObject" placeholder="File/Record*" 
+                        ng-change="onChangeProp(advSearchCtrl.selectedObject)">
+                          <md-option ng-repeat="obj in advSearchCtrl.objectType" value="{{obj.value}}">
+                            {{obj.label}}
+                          </md-option>
+                        </md-select>
+                     </md-input-container>
+                     </div>
+                     <div layout="column" flex="30"></div>
+                </md-whiteframe>
+         <!--  <form name="advSearchForm"> -->
+              <md-whiteframe class="md-whiteframe-5dp advSearch-opt" layout="column" ng-if='advSearchCtrl.selectedObject != undefined'>
+              <div layout="row">
+                  <div layout="column" flex="35"> 
+                     <md-input-container><label>Properties*</label>
+                        <md-select ng-model="advSearchCtrl.selectedProp1">
+                          <md-option ng-repeat="prop in advSearchCtrl.propertiesType" value="{{prop.value}}">
+                            {{prop.label}}
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+                  </div>
+                  <div layout="column" flex="5"></div>
+                  <div layout="column" flex="35">
+                      <md-input-container><label>Properties Value*</label>
+                        <input type="text" ng-model="advSearchCtrl.prpValue1">
+                      </md-input-container>
+                  </div>
+                  <div layout="column" flex="5"></div>
+                      <div layout="column" flex="10">
+                        <md-button class="md-fab" aria-label="add" style="background-color:#18a9b5"
+                            ng-click="showSecond = true" 
+                        ng-hide="showSecond == true || showThird == true || showForth == true || showFifth == true">
+                                     <ng-md-icon icon="add"></ng-md-icon>
+                        </md-button>
+                      </div>  
+               </div>
+
+               <div layout="row" ng-show="showSecond">
+                  <div layout="column" flex="35"> 
+                     <md-input-container><label>Properties</label>
+                        <md-select ng-model="advSearchCtrl.selectedProp2">
+                          <md-option ng-repeat="prop in advSearchCtrl.propertiesType" value="{{prop.value}}">
+                            {{prop.label}}
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+                  </div>
+                  <div layout="column" flex="5"></div>
+                  <div layout="column" flex="35">
+                      <md-input-container><label>Properties Value</label>
+                        <input type="text" ng-model="advSearchCtrl.prpValue2">
+                      </md-input-container>
+                  </div>
+                  <div layout="column" flex="5"> </div>
+                      <div layout="column" flex="10">
+                        <md-button class="md-fab" aria-label="clear" style="background-color:#18a9b5"
+                            ng-click="showSecond = false;advSearchCtrl.selectedProp2='';advSearchCtrl.prpValue2=''">
+                                     <ng-md-icon icon="clear"></ng-md-icon>
+                        </md-button>
+                      </div> 
+                      <div layout="column" flex="10">
+                        <md-button class="md-fab" aria-label="add" style="background-color:#18a9b5"
+                            ng-click="showThird = true" ng-hide="showThird == true || showForth == true || showFifth == true">
+                                     <ng-md-icon icon="add"></ng-md-icon>
+                        </md-button>
+                      </div> 
+               </div>
+
+                <div layout="row" ng-show="showThird">
+                        <div layout="column" flex="35"> 
+                           <md-input-container><label>Properties</label>
+                              <md-select ng-model="advSearchCtrl.selectedProp3">
+                                <md-option ng-repeat="prop in advSearchCtrl.propertiesType" value="{{prop.value}}">
+                                  {{prop.label}}
+                                </md-option>
+                              </md-select>
+                            </md-input-container>
+                        </div>
+                        <div layout="column" flex="5"></div>
+                        <div layout="column" flex="35">
+                            <md-input-container><label>Properties Value</label>
+                              <input type="text" ng-model="advSearchCtrl.prpValue3">
+                            </md-input-container>
+                        </div>
+                        <div layout="column" flex="5"> </div>
+                        <div layout="column" flex="10">
+                          <md-button class="md-fab" aria-label="clear" style="background-color:#18a9b5"
+                              ng-click="showThird = false;advSearchCtrl.selectedProp3='';advSearchCtrl.prpValue3=''">
+                                       <ng-md-icon icon="clear"></ng-md-icon>
+                          </md-button>
+                        </div> 
+                        <div layout="column" flex="10">
+                          <md-button class="md-fab" aria-label="add" style="background-color:#18a9b5"
+                              ng-click="showForth = true"  ng-hide="showForth == true || showFifth == true">
+                                       <ng-md-icon icon="add"></ng-md-icon>
+                          </md-button>
+                        </div> 
+                  </div>
+
+
+                  <div layout="row" ng-show="showForth">
+                    <div layout="column" flex="35"> 
+                       <md-input-container><label>Properties</label>
+                          <md-select ng-model="advSearchCtrl.selectedProp4">
+                            <md-option ng-repeat="prop in advSearchCtrl.propertiesType" value="{{prop.value}}">
+                              {{prop.label}}
+                            </md-option>
+                          </md-select>
+                        </md-input-container>
+                    </div>
+                    <div layout="column" flex="5"> </div>
+                    <div layout="column" flex="35">
+                        <md-input-container><label>Properties Value</label>
+                          <input type="text" ng-model="advSearchCtrl.prpValue4">
+                        </md-input-container>
+                    </div>
+                    <div layout="column" flex="5"></div>
+                    <div layout="column" flex="10">
+                      <md-button class="md-fab" aria-label="clear" style="background-color:#18a9b5"
+                          ng-click="showForth = false;advSearchCtrl.selectedProp4='';advSearchCtrl.prpValue4=''">
+                                   <ng-md-icon icon="clear"></ng-md-icon>
+                      </md-button>
+                    </div> 
+                    <div layout="column" flex="10">
+                      <md-button class="md-fab" aria-label="add" style="background-color:#18a9b5"
+                          ng-click="showFifth = true" ng-hide="showFifth == true">
+                                   <ng-md-icon icon="add"></ng-md-icon>
+                      </md-button>
+                    </div>  
+                 </div>
+
+
+                   <div layout="row" ng-show="showFifth">
+                    <div layout="column" flex="35"> 
+                       <md-input-container><label>Properties</label>
+                          <md-select ng-model="advSearchCtrl.selectedProp5">
+                            <md-option ng-repeat="prop in advSearchCtrl.propertiesType" value="{{prop.value}}">
+                              {{prop.label}}
+                            </md-option>
+                          </md-select>
+                        </md-input-container>
+                    </div>
+                    <div layout="column" flex="5"></div>
+                    <div layout="column" flex="35">
+                        <md-input-container><label>Properties Value</label>
+                          <input type="text" ng-model="advSearchCtrl.prpValue5">
+                        </md-input-container>
+                    </div>
+                    <div layout="column" flex="5"></div> 
+                    <div layout="column" flex="10">
+                    <md-button class="md-fab" aria-label="clear" style="background-color:#18a9b5"
+                        ng-click="showFifth = false;advSearchCtrl.selectedProp5='';advSearchCtrl.prpValue5=''">
+                                 <ng-md-icon icon="clear"></ng-md-icon>
+                    </md-button>
+                    </div> 
+                 </div>
+
+
+      
+                <div layout="row" ng-show="advSearchCtrl.selectedObject == 'jtc_record'">
+                    <div layout="column" flex="35"> 
+                      <md-input-container><label>Date Type</label>
+                        <md-select ng-model="advSearchCtrl.selectedDate">
+                          <md-option ng-repeat="datetype in advSearchCtrl.dateType" value="{{datetype.value}}">
+                            {{datetype.label}}
+                          </md-option>
+                        </md-select>
+                     </md-input-container>
+                     </div>
+                      <div layout="column" flex="5"> 
+                      </div>
+                      <div layout="column" flex="20" style="opacity: .6"> 
+                          From Date: <input type="date" ng-model="advSearchCtrl.fromDate">
+                      </div>
+                      <div layout="column" flex="5"> 
+                      </div>
+                      <div layout="column" flex="20" style="opacity: .6"> 
+                          To Date: <input type="date" ng-model="advSearchCtrl.toDate">
+                      </div>
+                      <div layout="column" flex="15"> </div>
+                </div>
+
+                <div layout="row" layout-align="center center" >
+                    <md-button class="md-fab search-btn" layout-align="center center" ng-disabled = "advSearchCtrl.selectedObject == ''"
+                     aria-label="Search" style="background-color:#18a9b5"  ng-click="advSearchDisply()" >
+                        <ng-md-icon icon="search"  size="28"></ng-md-icon>   
+                    </md-button>
+
+                </div>  
+               </md-whiteframe>  
+           <!--  </form>  -->
+          </div>
+        </md-content>
+    </div>
+</div>
+
